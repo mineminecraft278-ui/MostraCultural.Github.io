@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mostra Cultural CESM — 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+ .btn-play{
+  background: var(--blue-500);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-play:hover{
+  background: var(--blue-500);
+  transform: scale(1.05);
+}
+
+:root{
+  --blue-50: #E8F2FF;
+  --blue-100:#CCE6FF;
+  --blue-200:#99CCFF;
+  --blue-500:#0B66FF;
+  --blue-700:#044FCC;
+  --white:#ffffff;
+  --muted:#6b7280;
+  --radius:12px;
+  --maxwidth:1100px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family: 'Poppins', sans-serif;
+  margin:0;
+  background: linear-gradient(180deg,var(--white),var(--blue-50));
+  color: #0b2340;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.4;
+}
+.wrap{max-width:var(--maxwidth);margin:28px auto;padding:18px}
+header{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  background:var(--white);border-radius:16px;padding:14px 18px;box-shadow:0 6px 20px rgba(11,102,255,0.08);
+  position:sticky;top:12px;z-index:40;
+}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{
+  width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--blue-500),var(--blue-700));
+  display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px;
+  box-shadow:0 6px 18px rgba(11,102,255,0.16);
+}
+nav a{margin-left:14px;text-decoration:none;color:var(--blue-700);font-weight:600}
+.cta{background:var(--blue-500);color:var(--white);padding:8px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+.hero{
+  margin-top:24px;
+  background:linear-gradient(90deg,var(--white),var(--blue-50));
+  border-radius:18px;padding:28px;display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:center;
+}
+.hero h1{margin:0;font-size:28px;color:var(--blue-700)}
+.hero p{margin-top:10px;color:var(--muted)}
+.meta{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+.pill{background:var(--blue-100);padding:8px 12px;border-radius:999px;font-weight:600;color:var(--blue-700)}
+.countdown{background:var(--blue-500);color:var(--white);padding:12px;border-radius:12px;text-align:center}
+.hero-right{background:var(--white);border-radius:12px;padding:12px;box-shadow:0 8px 24px rgba(11,102,255,0.06)}
+section{margin-top:22px;background:var(--white);border-radius:14px;padding:18px;box-shadow:0 10px 30px rgba(11,102,255,0.04)}
+h2{margin:0 0 10px 0;color:var(--blue-700)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.card{background:var(--blue-50);padding:12px;border-radius:12px}
+.program-card{display:flex;flex-direction:column;gap:8px}
+.time{font-weight:700;color:var(--blue-700)}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.gallery img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+input,textarea{padding:10px;border-radius:10px;border:1px solid var(--blue-100);font-family:inherit}
+textarea{grid-column:1/-1;min-height:120px}
+.btn{background:var(--blue-500);color:white;padding:10px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
+footer{margin-top:18px;text-align:center;color:var(--muted);font-size:14px;padding:18px}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr; text-align:center}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  form{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  nav{display:none}
+  .logo{width:48px;height:48px}
+  .grid-3{grid-template-columns:1fr}
+  .gallery img{height:120px}
+}
+.fade{opacity:0;transform:translateY(8px);transition:all .6s ease}
+.fade.show{opacity:1;transform:none}
+</style>
+</head>
+<body>
+  <header class="wrap" role="banner">
+    <div class="brand">
+      <div class="logo">CESM</div>
+      <div>
+        <div style="font-weight:700;color:var(--blue-700)">Mostra Cultural CESM</div>
+        <div style="font-size:12px;color:var(--muted)">8 de dezembro 2025 — "Grupo de Tecnologia"</div>
+      </div>
+    </div>
+    <nav aria-label="Navegação">
+      <a href="#sobre">Sobre</a>
+      <a href="#programacao">Programação</a>
+      <button class="btn-play" onclick="startGame()">JOGAR</button>
+    </nav>
+  </header>
+
+  <main class="wrap" role="main">
+    <section class="hero fade" id="home">
+      <div>
+        <h1>Mostra Cultural CESM — </h1>
+        <div class="meta">
+          <div class="pill">08 Dez 2025</div>
+          <div class="pill">Quadra CESM</div>
+        </div>
+        <div style="margin-top:16px">
+          <a href="#programacao" class="cta">Ver Programação</a>
+        </div>
+      </div>
+      <aside class="hero-right">
+        <div class="countdown" aria-live="polite">
+          <div style="font-size:14px;font-weight:600">Faltam</div>
+          <div id="countdown-timer" style="font-size:20px;margin-top:6px">—</div>
+        </div>
+        <div style="margin-top:12px">
+          <h3 style="margin:6px 0 8px 0;color:var(--blue-700)">Destaques</h3>
+          <ul style="margin:0;padding-left:18px;color:var(--muted)">
+            <li>Apresentações de jogos pedagógicos</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <section id="sobre" class="fade">
+      <h2>Sobre a Amostra</h2>
+      <p> Mostra Cultural do Colégio CESM tem por objetivo valorizar a diversidade cultural e artística dos estudantes, promover a integração entre turmas e fortalecer o vínculo com a comunidade local. O evento reúne apresentações, exposições e oficinas que mostram o resultado de projetos pedagógicos durante o ano.</p>
+      <div style="margin-top:12px" class="grid-3">
+        <div class="card">
+          <strong>Missão</strong>
+          <p style="margin:8px 0 0 0;color:var(--muted)">Incentivar a expressão criativa e o respeito às diversas manifestações culturais.</p>
+        </div>
+        <div class="card">
+          <strong>Visão</strong>
+          <p style="margin:8px 0 0 0;color:var(--muted)">Ser referência local em eventos escolares que promovem cultura e aprendizagem.</p>
+        </div>
+        <div class="card">
+          <strong>Valores</strong>
+          <p style="margin:8px 0 0 0;color:var(--muted)">Respeito, criatividade e colaboração.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="programacao" class="fade">
+      <h2>Programação</h2>
+      <p style="color:var(--muted)"></p>
+     
+      <div style="margin-top:12px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
+        <div class="program-card card" data-day="25">
+          <div class="time">18:30 — Abertura</div>
+          <div></div>
+        </div>
+        <div class="program-card card" data-day="25">
+          <div class="time"> 18:30 as 21:00 — Exposição de trabalho </div>
+        </div>
+        <div class="program-card card" data-day="26">
+          <div class="time"> 19:00 as 20:00 — Palestra: mitos e verdades da vida financeira </div>
+          <div></div>
+        </div>
+        <div class="program-card card" data-day="26">
+          <div class="time"> 21:00 — Encerramento </div>
+          <div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="equipe" class="fade">
+      <h2>Equipe e Colaboradores</h2>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+        <div style="background:var(--blue-50);padding:12px;border-radius:12px;min-width:200px">
+          <strong>Coordenação</strong>
+          <div style="color:var(--muted);margin-top:6px">Equipe Doscente</div>
+        </div>
+        <div style="background:var(--blue-50);padding:12px;border-radius:12px;min-width:200px">
+          <strong>Produção</strong>
+          <div style="color:var(--muted);margin-top:6px">Equipe Doscente e Discente</div>
+        </div>
+        <div style="background:var(--blue-50);padding:12px;border-radius:12px;min-width:200px">
+          <strong>Execução</strong>
+          <div style="color:var(--muted);margin-top:6px">Equipe Discente</div>
+        </div>
+      </div>
+    </section>
+      <div style="margin-top:12px;color:var(--muted)">
+        <strong>Endereço:</strong> Rua Adélia Pinheiro Ribeiro - nº 4 - Itacibá - Cariacica-ES 
+      </div>
+      <div style="margin-top:10px">
+        <iframe title="Mapa CESM" src="https://www.google.com/maps/embed?pb=" style="width:100%;height:220px;border:0;border-radius:10px;margin-top:8px"></iframe>
+      </div>
+    </section>
+
+    <footer class="fade">
+      © 2025 Colégio CESM — Mostra Cultural •
+  </main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.fade').forEach((el,i)=>{
+    setTimeout(()=>el.classList.add('show'), 120 + i*120);
+  });
+
+  const target = new Date('2025-12-10T09:00:02-03:00').getTime();
+  const timerEl = document.getElementById('countdown-timer');
+  function updateCountdown(){
+    const now = Date.now();
+    const diff = target - now;
+    if(diff <= 0){ timerEl.textContent = 'O evento começou!'; clearInterval(cnt); return; }
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    const mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+    const secs = Math.floor((diff % (1000*60)) / 1000);
+    timerEl.textContent = `${days}d ${hours}h ${mins}m ${secs}s`;
+  }
+  updateCountdown();
+  const cnt = setInterval(updateCountdown, 1000);
+});
+
+function filterDay(day){
+  const cards = document.querySelectorAll('.program-card');
+  cards.forEach(c=>{
+    if(day === 'all'){ c.style.display = 'block'; return; }
+    c.style.display = (c.getAttribute('data-day') === day) ? 'block' : 'none';
+  });
+  document.getElementById('programacao').scrollIntoView({behavior:'smooth'});
+}
+
+function startGame(){
+  window.location.href = "dex.html"; 
+}
+</script>
+</body>
+</html>
